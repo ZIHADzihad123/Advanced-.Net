@@ -1,0 +1,40 @@
+﻿@model List<Lab_Task_2_Product_Crud.Models.Entities.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<a class="btn btn-primary" href="/product/create">Add product </a>
+
+<br />
+<h3>All Product</h3>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Description</th>
+
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>@p.Qty</td>
+            <td>@p.Price</td>
+            <td>@p.Desc</td>
+            <td>
+                <a href="/Product/Edit/@p.Id" class="btn btn-success">Update</a>
+                <a href="/Product/Delete/@p.Id" class="btn btn-danger">Remove</a>
+            </td>
+        </tr>
+
+    }
+
+</table>
+

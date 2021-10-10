@@ -1,0 +1,30 @@
+﻿@model Lab_Task_2_Product_Crud.Models.Entities.Product
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form action="/Product/Edit" method="post">
+
+    Id: <input type="number" name="Id" value="@Model.Id" readonly class="form-control" />
+    Name:
+    <input type="text" class="form-control" value="@Model.Name" name="Name" placeholder="Enter name" />
+    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    <br />
+    Quantity:
+    <input type="text" class="form-control" value="@Model.Qty" name="Qty" placeholder="Enter quantity" />
+    @Html.ValidationMessageFor(m => m.Qty, "", new { @class = "text-danger" })
+    <br />
+    Price:
+    <input type="text" class="form-control" value="@Model.Price" name="Price" placeholder="Enter price" />
+    @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
+    <br />
+    Description:
+    <textarea class="form-control" value="@Model.Desc" name="Desc" rows="3" placeholder="Enter description"></textarea>
+    @Html.ValidationMessageFor(m => m.Desc, "", new { @class = "text-danger" })
+    <br />
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
